@@ -56,8 +56,8 @@
                 </form>
             </div>
 
-            <div id="look" style="margin: 0% 25%; text-align: center; display:none;">
-                <div style="display: block; padding: 0% 20%;">
+            <div id="look" style="text-align: center; display:none;">
+                <div>
                     <table class="styled-table">
                         <thead>
                             <tr>
