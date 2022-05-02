@@ -30,21 +30,31 @@
         <br>
         <h2>Nóminas - Empresa</h2>
         <br>
-        <div style="margin: 0% 25%; text-align: center;">
-            <form action="Busqueda.php" method="GET">
-                Buscar por nombre
-                <input type="text" autocomplete="off" name="nombre">
-                <input type="submit" name = "submit" class="green" value="->" style="width: 30px">
-                <br>
-            </form>
-            <form action="Busqueda.php" method="GET">
-                Buscar por area
-                <input type="text" autocomplete="off" name="area">
-                <input type="submit" name = "submit" class="green" value="->" style="width: 30px">
-            </form>
+        <div style="margin: 0% 25%;">
+            <div style="display: flex;">
+                <div>
+                    <p style="margin: 9px auto; padding: 5px;">Buscar por nombre</p>
+                    <p style="margin: 9px auto; padding: 5px;">Buscar por area</p>
+                </div>
+                <div style="width: -webkit-fill-available;">
+                    <form action="Busqueda.php" method="GET">
+                        <input type="text" autocomplete="off" name="nombre">
+                        <input type="submit" name = "submit" class="green" value="->" style="width: 30px">
+                        <br>
+                    </form>
+                    <form action="Busqueda.php" method="GET">
+                        <input type="text" autocomplete="off" name="area">
+                        <input type="submit" name = "submit" class="green" value="->" style="width: 30px">
+                    </form>
+                </div>
+            </div>
+            
             <br>
-            <button id="btnadd">Agregar un empleado</button>
-            <button id="btnlook">Ver lista completa de empleados</button>
+            <div style="text-align:center;">
+                <button id="btnadd">Agregar un empleado</button>
+                <button id="btnlook">Ver lista completa de empleados</button>
+            </div>
+            
             <div id="add" style="margin: 0% 25%; text-align: center; display:none;">
                 <?php require_once 'php/process.php'?>
                 <form action="php/process.php" method="POST">
