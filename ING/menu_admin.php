@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="./estilo.css">
         <link rel="icon" href="img/hospital.png">
         <style>
+
         </style>
     </head>
     <body>
@@ -24,7 +25,7 @@
     <div class="tutorial">
     <ul>
       <div style="font-size:40px; float: left; color: white;padding-top: 15px; margin-right: 15px;">Inicio administrador</div>
-        <li><a href="php/cerrarSesion.php">Cerrar sesión </a></li>
+        <li><a id="a" href="php/cerrarSesion.php">Cerrar sesión </a></li>
       </ul>
       <div class="slider">
         <br>
@@ -85,13 +86,11 @@
                                 if(mysqli_num_rows($query_run) > 0){
                                 foreach($query_run as $items){
                             ?>
-                            <tr class="active-row">
+                            <tr onclick="window.location='Busqueda.php?nombre=<?php echo $items['Nombre']; ?>'" class="active-row">
                             <td><?= $items['id']; ?></td>
                             <td><?= $items['Nombre']; ?></td>
                             <td><?= $items['Area']; ?></td>
                             <td><?= $items['Sueldo']; ?></td>
-                            <td><a id="toggle">Editar</a>
-                            <a href="php/process.php?delete=<?php echo $items['id']; ?>">Borrar</a></td>
                             </tr>
                             <?php
                                 }}?>
