@@ -14,9 +14,17 @@
     <head>
         <meta charset="UTF-8">
         <title>Administrador | SBD</title>
-        <link rel="stylesheet" href="./estilo.css">
+        <link rel="stylesheet" href="estilo.css">
         <link rel="icon" href="img/hospital.png">
         <style>
+            .styled-table tbody tr.active-row:hover {
+    cursor: pointer;
+    border-style: solid;
+    border: 5px solid blue;  
+}
+input::placeholder {
+  color:gray;
+}
 
         </style>
     </head>
@@ -39,31 +47,35 @@
                 </div>
                 <div style="width: -webkit-fill-available;">
                     <form action="Busqueda.php" method="GET">
-                        <input type="text" autocomplete="off" name="nombre">
-                        <input type="submit" name = "submit" class="green" value="->" style="width: 30px">
+                        <input class="input" type="text" autocomplete="off" name="nombre">
+                        <input class="input" type="submit" name = "submit" class="green" value="->" style="width: 30px">
                         <br>
                     </form>
                     <form action="Busqueda.php" method="GET">
-                        <input type="text" autocomplete="off" name="area">
-                        <input type="submit" name = "submit" class="green" value="->" style="width: 30px">
+                        <input class="input" type="text" autocomplete="off" name="area">
+                        <input class="input" type="submit" name = "submit" class="green" value="->" style="width: 30px">
                     </form>
                 </div>
             </div>
             
             <br>
-            <div style="text-align:center;">
-                <button id="btnadd">Agregar un empleado</button>
-                <button id="btnlook">Ver lista completa de empleados</button>
+            <div style="text-align:center; display: flex; justify-content: center;">
+                <div style="margin-left: 45px;">
+                    <button id="btnadd" style="background: green;"><span class='text'>Agregar empleado</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg></span></button>
+                </div>
+                <div style="margin-left: 45px;">
+                    <button id="btnlook" style="background: blue;"><span class='text'>Ver lista completa de empleados</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg></span></button>
+                </div> 
             </div>
             
-            <div id="add" style="margin: 0% 25%; text-align: center; display:none;">
+            <div id="add" style="margin: 5% 25%; text-align: center; display:none; border-top: 5px solid #8ecbfe;">
                 <?php require_once 'php/process.php'?>
                 <form action="php/process.php" method="POST">
-                    Agregar empleado<br>
-                    <input type="text" autocomplete="off" placeholder="Nombre del empleado" name="nombreADD"><br>
-                    <input type="text" autocomplete="off" placeholder="Area del empleado" name="areaADD"><br>
-                    <input type="text" autocomplete="off" placeholder="Sueldo del empleado" name="sueldoADD"><br>
-                    <button type="submit" name="save">Guardar datos</button>
+                    <h2>Agregar empleado<br></h2>
+                    <input class="form" type="text" autocomplete="off" placeholder="Nombre del empleado" name="nombreADD" required><br>
+                    <input class="form" type="text" autocomplete="off" placeholder="Area del empleado" name="areaADD" required><br>
+                    <input class="form" type="text" autocomplete="off" placeholder="Sueldo del empleado" name="sueldoADD" required><br>
+                    <button class="two" type="submit" name="save">Guardar datos</button>
                 </form>
             </div>
 
@@ -113,6 +125,7 @@
     btn1.onclick = function () {
         if (targetDiv1.style.display !== "block") {
             targetDiv1.style.display = "block";
+            targetDiv2.style.display = "none";
         }else{
             targetDiv1.style.display = "none";
         }
@@ -120,6 +133,7 @@
     btn2.onclick = function () {
         if (targetDiv2.style.display !== "block") {
             targetDiv2.style.display = "block";
+            targetDiv1.style.display = "none";
         }else{
             targetDiv2.style.display = "none";
         }

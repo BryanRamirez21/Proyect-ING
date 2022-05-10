@@ -20,6 +20,7 @@
         $area = $_POST['areaADD'];
         $salary = $_POST['sueldoADD'];
         $conexion->query("UPDATE trabajadores SET Nombre='$name', Area='$area', Sueldo='$salary' WHERE id=$id");
-        echo "<script> alert('Datos editados');</script>";
+        echo "<script> alert('Datos editados'); window.location = '../Busqueda.php?nombre=$name';</script>";
     }
 ?>
+

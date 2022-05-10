@@ -1,3 +1,6 @@
+$font-family:   "Roboto";
+$font-size:     14px;
+$color-primary: #ABA194;
 *,
 *:before,
 *:after {
@@ -7,8 +10,13 @@
 }
 
 body, html {
-  height: 100%;
-  background-color: mediumseagreen;
+  font-family: $font-family;
+    font-size: $font-size;
+    background-size: 200% 100% !important;
+    animation: move 10s ease infinite;
+    transform: translate3d(0, 0, 0);
+    background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%);
+    height: 100vh;
 }
 
 .container {
@@ -37,7 +45,7 @@ img.hosImg {
   background-color: #4d494a;
   height: auto;
 }
-.tutorial .slider h2 {
+.tutorial .slider, h2 {
   text-align: center;
   font-size: 1.5rem;
   color: #e0e0e0;
@@ -144,7 +152,7 @@ img.hosImg {
 }
 
 a,
-input{
+.input{
   font-family: 'Arial', sans-serif;
   text-decoration: none;
   position: relative;
@@ -169,20 +177,14 @@ input:focus{
   background: rgba(3,3,3,.18);
 }
 
-/* Placeholders */
-::-webkit-input-placeholder {
-   color: rgb(255, 255, 255);  }
-::-moz-input-placeholder {
-  color: rgb(255, 255, 255);
-}
-
 .styled-table {
   border-collapse: collapse;
   font-size: 0.9em;
   font-family: sans-serif;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   width: 100%;
-  margin: 0;
+  margin-top: 25px;
+
 }
 
 .styled-table thead tr {
@@ -218,6 +220,93 @@ input:focus{
   border-bottom: 1px solid #dddddd;
 }
 
-.styled-table tbody tr.active-row:hover {
-    cursor: pointer;
+.form{
+    background-color: white;
+    color: black;
+    border-radius: 6px;
+    padding: 5px;
+    margin-top: 15px;
+    font-family: $font-family;
+    -webkit-appearance: none;
+    border: 0;
+    outline: 0;
+    width: 70%;
+    font-size: 1.2rem;
+    height:25px;
+}
+.form:focus{
+  outline: none;
+  box-shadow: 6px 6px 20px #333;
+  background: white;
+  
+}
+
+button {
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+	background: #e62222;
+	padding-right:55px;
+}
+
+button, button span {
+	transition: 200ms;
+}
+
+button .text {
+	color: white;
+	font-weight: bold;
+}
+
+button .icon {
+	position: absolute;
+	border-left: 1px solid #c41b1b;
+	transform: translateX(100px);
+	height: 40px;
+	width: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+button svg {
+	width: 15px;
+	fill: #eee;
+}
+
+#btnlook:hover, #btnadd:hover {
+	background: #ff3636;
+}
+
+#btnlook:hover .text, #btnadd:hover .text{
+	color: transparent;
+}
+
+#btnlook:hover .icon, #btnadd:hover .icon {
+	width: 140px;
+	border-left: none;
+	transform: translateX(0);
+}
+
+#btnlook:focus, #btnadd:focus {
+	outline: none;
+}
+
+.two {
+	background-color: white;
+  display: initial; 
+  height: 
+  40px;
+  margin-top: 10px; 
+  padding: 0px;
+}
+
+.two:hover{
+  background-color: black;
+  color:white;
 }

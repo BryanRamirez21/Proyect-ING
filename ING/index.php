@@ -23,29 +23,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="img/hospital.png">
+  <style>
+    
+  </style>
 </head>
 <body>
-<div id="login-button">
-  <img src="img/login-w-icon.png">
-</div>
-<div id="container">
-  <p>
-  <h1>Iniciar sesión</h1>
-  <span class="close-btn" title="Close">
-    <img src="https://cdn4.iconfinder.com/data/icons/miu/22/circle_close_delete_-128.png">
-  </span>
-  <img src="img/av1.png" alt="Avatar" class="avatar">
-
-  <form name="contacto" method="post" action="php/IniciarSesion.php">
-    <input type="text" autocomplete="off" name="username" placeholder="Usuario" required>
-    <input type="password" autocomplete="off" name="contraseña" placeholder="Contraseña" required>
-    <input type="submit" name = "ingresar" class="green" value="Ingresar">
-    <input type="reset" name = "clear" class="red close-cancel" value="Volver">
-</form>
-</div>
-
+<div class="center">
+      <h1>Iniciar sesión</h1>
+      <form name="contacto" method="post" action="php/IniciarSesion.php">
+        <div class="txt_field">
+          <input type="text" autocomplete="off" name="username" required>
+          <span></span>
+          <label>Nombre de usuario</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" autocomplete="off" name="contraseña" required>
+          <span></span>
+          <label>Contraseña</label>
+        </div>
+        <input type="submit" name = "ingresar" class="green" value="Ingresar">
+      </form>
+    </div>
 </div>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js'></script>
